@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :microposts
+
   def generate_authentication_token
     loop do
       self.authentication_token = SecureRandom.base64(64)
