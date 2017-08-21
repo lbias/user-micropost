@@ -6,6 +6,7 @@ class Api::V1::BaseController < ApplicationController
   before_action :destroy_session
 
   attr_accessor :current_user
+  include Pundit
 
   def destroy_session
     request.session_options[:skip] = true
@@ -30,5 +31,5 @@ class Api::V1::BaseController < ApplicationController
 
   def unauthenticated!
     api_error(status: 401)
-  end  
+  end
 end
