@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       scope path: '/user/:user_id' do
         resources :microposts, only: [:index]
       end
-    end    
+    end
   end
+
+  get '/docs/index', to: 'docs#index'  
 end
